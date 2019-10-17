@@ -4,7 +4,7 @@
 namespace ExampleAutoload;
 
 /**
- * An WordpressMagicBoilerplate of a general-purpose implementation that includes the optional
+ * An ExampleAutoload of a general-purpose implementation that includes the optional
  * functionality of allowing multiple base directories for a single namespace
  * prefix.
  *

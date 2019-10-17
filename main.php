@@ -4,17 +4,19 @@ Plugin Name: Example Autoload plugin
 Author: Petrozavodsky
 */
 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once( plugin_dir_path( __FILE__ )."includes/Autoloader.php" );
+require_once( plugin_dir_path( __FILE__ ) . "includes/Autoloader.php" );
 
 
 new ExampleAutoload\Autoloader( __FILE__, 'ExampleAutoload' );
 
 
-add_action( 'plugins_loaded', function (){
+// тут мы вызываем все существующие классы из немспейса ExampleAutoload\AutoPop
+add_action( 'plugins_loaded', function () {
 
 	new ExampleAutoload\Classes\Activate(
 		__FILE__,
@@ -23,3 +25,5 @@ add_action( 'plugins_loaded', function (){
 	);
 
 }, 50 );
+
+
